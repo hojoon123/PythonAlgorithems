@@ -1,19 +1,17 @@
 import sys
 from math import sqrt
 input = sys.stdin.readline
-def selsort(n):
-    for i in range(len(n)-1):
-        min_idx = i
-        for j in range(i+1, len(n)): 
-            if n[min_idx] > n[j]:
-                min_idx = j 
-        n[i], n[min_idx] = n[min_idx], n[i]
+def bubsort(l):
+  for i in range(len(l)-1):
+    for j in range(len(l)-1-i):
+      if l[j] > l[j+1]:
+        l[j], l[j+1] = l[j+1], l[j]
 
 n = int(input())
 arr = []
 for i in range(n):
     arr.append(int(input()))
-selsort(arr)
+bubsort(arr)
 for j in arr:
     print(j)
     
