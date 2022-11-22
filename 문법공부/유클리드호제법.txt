@@ -1,0 +1,17 @@
+def gcd(x, y):  #최대공약수 구하기
+  if y == 0:
+    return x
+  else:
+    return gcd(y, x%y)
+  
+def lcm(x, y):  ## 최소공배수 구하기
+  result = (x*y) // gcd(x,y)
+  return result
+
+    return gcd(y, x%y)
+22112_BJOMath / BJO1934 copy.py
+유클리드 호제법 알고리즘 
+근데 솔직히 math 쓰면 직빵임 ㅋㅋ
+
+함수 math.gcd
+math.lcm 쓰면됨

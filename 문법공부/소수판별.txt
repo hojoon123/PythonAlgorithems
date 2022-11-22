@@ -1,0 +1,13 @@
+def func(n): #소수 판별 함수
+    result = 0
+    if n == 1:
+        return result
+    for j in range(2,int(sqrt(n)) + 1): #i-1 까지임
+        if n % j == 0:
+            break
+    else:
+        result += 1
+    return result
+
+예제 BJO9020, 또 기본수학2번 골드바흐 추측
+둘 다 골드바흐 추측이고 걍 풀이 조금만 다름 걍 똑같음ㅇㅇ
