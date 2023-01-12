@@ -2,7 +2,7 @@ from sys import stdin
 
 input = stdin.readline
 #이게 메모리 최소화 하고 if 문 존나 때려서 만든 거 
-#numbers를 덧씌워서 메모리를 최소화 근데 속도까지 곁들인
+#numbers를 덧씌워서 메모리 최소화 게다가 number를 입력함과 동시에 numbers에 채워서 for문까지 덜 돌림
 #나보다 훨씬 잘 짠 코드 진짜 배울게 많다...
 def main():
     size, sum_count = map(int, input().split())
@@ -11,7 +11,6 @@ def main():
     for i in range(size):
         row = []
         for j, number in enumerate(map(int, input().split())):
-            print(j, number)
             delta = numbers[i-1][j] if i > 0 else 0
             mae = row[j-1] if j > 0 else 0
             diagonal = numbers[i-1][j-1] if i > 0 and j > 0 else 0
