@@ -1,15 +1,15 @@
 from sys import stdin
 input = stdin.readline
-
+# 이거 이해 제대로 못했음.. 나중에 짬 좀 채우고 다시 오자.
 def dfs(x,lv):
     if visited[x]:
         return 0
     visited[x] = True
-    size=1
+    size = 1
     level[x] = lv
     for i in range(len(link[x])):
-        next =link[x][i]
-        size += dfs(next,lv+1)
+        next = link[x][i]
+        size += dfs(next,lv + 1)
     tsize[x] = size
     return size
 
