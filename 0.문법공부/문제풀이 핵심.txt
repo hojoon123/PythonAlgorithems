@@ -1,7 +1,7 @@
 문제 풀 때 마다 추가하기
 하는 법도 적어두면 나중에 까먹었을 때 유용할 듯
 bfs만들기 17번줄//dfs만들기 29번줄//링크만들기 43번줄//상하좌우 탐색 53번줄//가중치 조정 72
-
+88 완전,포화 이진트리 // 110 트리 가중치 포함 // 121 트리 루트 찾기
 
 
 
@@ -96,3 +96,45 @@ Complete Binary Tree의 노드 갯수가 K개라면, Tree의 높이는 밑이 2�
 시간복잡도 O(log)
 높이가 d라면 노드의 수 2^d 이상이고 2^(d + 1)개 미만
 높이가 3일 경우  8 <= 노드의 수 <= 15   
+
+트리 집어넣기
+if __name__ == '__main__':
+    n = int(input())
+    tree = {}
+    for i in range(n):
+        root, left, right = map(str,input().split())
+        tree[root] = [left, right]
+루트 왼쪽 오른쪽 받아서 차근차근 딕셔너리에 떄려박음
+
+
+트리 가중치 포함해서 리스트에 입력하기
+if __name__ == '__main__':
+    n = int(input())
+    tree = [[] for i in range(n + 1)]
+    dist = [-1] * (n + 1)
+    for i in range(n - 1):
+        root, child, biase = map(int,input().split())
+        tree[root].append([child, biase])
+        tree[child].append([root,biase])
+
+
+트리 루트 찾기
+if __name__ == '__main__':
+    n = int(input())
+    tree = [[] for i in range(n + 1)]
+    node = [0] * (n + 1)
+    row = [[] for i in range(n + 1)]
+    location = 1
+    for i in range(n):
+        root, left, right = map(int,input().split())
+        tree[root].append(left)
+        tree[root].append(right)
+        node[root] += 1
+        if left != -1:
+            node[left] += 1
+        if right != -1:
+            node[right] += 1
+    
+    for i in range(1, n + 1):
+        if node[i] == 1:
+            rt = i

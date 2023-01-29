@@ -9,7 +9,6 @@ for k in range(2):
                 if k == 1:
                     print(arr[i][j], end=" ")
   
-
 '''
 첫 줄 행렬 M * N
 둘부터 N개의 줄 M개의 원소 A 다 넣으면
