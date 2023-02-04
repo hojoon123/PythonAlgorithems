@@ -10,7 +10,7 @@ def check(a,b):
     # y = 1 x = 2
 if __name__ == '__main__':
     a, b = map(int,input().split())
-    if a - b < 0 or (a - b):
+    if a < b or (a - b) % 2 != 0:
         print(-1)
     else:
         check(a,b)
