@@ -6,10 +6,12 @@ input = sys.stdin.readline
 
 
 '''
+
 예제 입력 1 
 2
-AAA
-AAA
+5 6
+0 0 1 0
 예제 출력 1 
-1998
+30
+30
 '''
