@@ -32,7 +32,7 @@ def levelorder(root):
         node = q.popleft()
         if node != '.':
             print(node, end='')
-            if tree[node][0]:
+            if tree[node][0]:   
                 q.append(tree[node][0])
             if tree[node][1]:
                 q.append(tree[node][1])

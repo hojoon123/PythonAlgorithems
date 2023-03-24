@@ -18,9 +18,10 @@ for nums in range(1000001):
 
         # 고장난 숫자 없이 마지막 자리까지 왔다면 min_count 비교 후 업데이트
         elif j == len(nums) - 1:
-            min_count = min(min_count, abs(int(nums) - target) + len(nums))            
+            min_count = min(min_count, abs(int(nums) - target) + len(nums))          
 print(min_count)
 '''
+2023년 2월 16일의 강호준이 이해했다 성불해라 2022년12월 8일의 강호준
 다시 해보기
 고민 겁나 싸고 개망함
 N (0 ≤ N ≤ 500,000)

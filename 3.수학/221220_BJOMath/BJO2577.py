@@ -9,6 +9,7 @@ res = list(str(res))
 
 for i in range(10):
     print(res.count(str(i)))
+
     
 '''
 예제 입력 1 

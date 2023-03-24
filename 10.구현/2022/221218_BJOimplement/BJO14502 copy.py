@@ -24,6 +24,7 @@ def solve():
         infection = 0
         for pos in build:
             tmp_world[pos] = 1
+            
         while que:
             idx = que.pop()
             infection += 1
