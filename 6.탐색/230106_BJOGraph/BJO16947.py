@@ -37,7 +37,7 @@ if __name__ == '__main__':
     link = [[] for i in range(N)]
     cycle_station = [0] * N # 순환역
     distance = [-1] * N # 순환역으로부터의 거리
-
+    
     for i in range(N):
         a, b = map(int,input().split())
         link[a - 1].append(b - 1)
