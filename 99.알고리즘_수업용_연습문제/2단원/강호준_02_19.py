@@ -3,7 +3,7 @@ input = stdin.readline
 
 # 5 / 1,2  2.5 / 1,2 1.25 1,2 / 0.725
 # 2배씩 늘어남 5는 근데 1개니까 1빼기 
-# 2**4 - 1
+# 2**4 - 1 asterisk(5) = 15
 def asterisk(i):
     if i > 1:
         asterisk(i/2)

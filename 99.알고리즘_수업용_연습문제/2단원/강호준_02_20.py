@@ -1,4 +1,5 @@
 import sys
+import math
 sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
@@ -23,23 +24,30 @@ def ps_4(n):
     while n >= 2:
         n /= 2
         res += 1
-    res = res + 1
-    return res
+    if n == 1.0:
+        res = res + 1
+        return res
+    else:
+        return None
 
-# int((3/2) * n)    
+# log3(3)부터log3(n)까지의 수를 더한 값 + n  
 def ps_5(n):
-    res = n
-    while n >= 3:
-        n /= 3
-        res += n
-        print(n)
-    res = int(res)
-    return res
+        res = n
+        while n >= 3:
+            n /= 3
+            res += n
+        if n == 1.0:
+            res = int(res)
+            return res
+        else:
+            return None
 
 # int((3/2) * n)
 def ps_5anoter(n):
-    res = int((3/2) * n)
-    return res
+    result = math.log(n, 3)
+    if float(int(result)) == result:
+        res = int((3/2) * n)
+        return res
 
 if __name__ == "__main__": # 메인문입니다.
     user_input = int(input())
