@@ -2,8 +2,8 @@ import sys
 import heapq
 input = sys.stdin.readline
 
-def solve(v, graph, inf, start):
-    distance= [inf for i in range(v + 1)]
+def solve(v, graph, start):
+    distance= [int(1e9) for i in range(v + 1)]
     distance[start] = 0
     for i in range(v):
         for j in range(len(graph)):
@@ -23,7 +23,6 @@ def main():
     for _ in range(t):
         v, e, e2 = map(int,input().split())
         graph = []
-        inf = int(1e9)
         for i in range(e):
             s, e, w = map(int,input().split())
             graph.append((s,e,w))
@@ -32,7 +31,7 @@ def main():
             s, e, w = map(int,input().split())
             graph.append((s,e,-w))
             
-        if solve(v, graph, inf, 1):
+        if solve(v, graph, 1):
             print("YES")
         else:
             print("NO")
