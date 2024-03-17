@@ -2,8 +2,27 @@ import sys
 from bisect import bisect_left, bisect_right, bisect
 input = sys.stdin.readline
 
-def find_max_dist(n, c, graph):
-    pass
+def find_max_dist(n, c, h):
+    h.sort()
+    s, e  = 1, h[n-1] - h[0]
+    if c == 2:
+        return e
+    else:
+        while (s < e):
+            mid = (s + e) // 2
+            cnt = 1
+            pre_h =  h[0]
+            
+            for i in range(n):
+                if h[i] - pre_h >= mid:
+                    cnt += 1
+                    pre_h = h[i]
+            if cnt >= c:
+                ans = mid
+                s = mid + 1
+            else:
+                e = mid
+    return ans
             
 def main():
     n, c = map(int,input().split())
@@ -12,19 +31,3 @@ def main():
             
 if __name__ =="__main__":
     main()
-    
-
-
-'''
-예제 입력 1 
-5
-4 1 5 2 3
-5
-1 3 7 9 5
-예제 출력 1 
-1
-1
-0
-0
-1
-'''

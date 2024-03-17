@@ -2,29 +2,33 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
-def solve(s):
+def solve(s, n, k):
+    curY = 0
+    curX = 0
 
-    tmp = [0,0]
-    while s:
-        t = s.pop()
-        if t == "U":
-            tmp[0] += 1
-        elif t == "D":
-            tmp[0] -= 1
-        elif t == "R":
-            tmp[1] += 1
-        else:
-            tmp[1] -= 1
-            
-        if tmp == [0,0]:
-            return "YES"
+    if k > (n // 2):
+        k = (n // 2)
+
+    for _ in range(k):
+        for c in s:
+            if c == 'U':
+                curY += 1
+            elif c == 'D':
+                curY -= 1
+            elif c == 'L':
+                curX -= 1
+            else:
+                curX += 1
+            if curY == 0 and curX == 0:
+                return "YES"
+
     return "NO"
 
 def main():
     n, k = map(int,input().split())
-    s = list(map(str,input().rstrip()))
+    s = str(input().rstrip())
     
-    print(solve(s))
+    print(solve(s, n, k))
     
 if __name__ == "__main__":
     main()
